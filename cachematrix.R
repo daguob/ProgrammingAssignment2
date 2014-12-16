@@ -21,8 +21,7 @@
 ##              newCacheMatrixObject$set(mat)
 ##
 ##      Example 2:
-##              mat <- matrix(c(1:4),2)
-##              newCacheMatrixObject <- makeCacheMatrix(mat)
+##              newCacheMatrixObject <- makeCacheMatrix(matrix(c(1:4),2))
 ##
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -36,7 +35,8 @@ makeCacheMatrix <- function(x = matrix()) {
                 c_inv <<- NULL
         }
 
-        ## get the input matrix 
+        ## get the input matrix. This is called by cacheSolve to calculate
+        ## the inverse.
         get <- function() x
 
         ## store the inverse matrix in cache
